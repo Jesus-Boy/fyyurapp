@@ -13,12 +13,12 @@ from flask_sqlalchemy import SQLAlchemy
 import logging
 from logging import Formatter, FileHandler
 from flask_wtf import Form
-from sqlalchemy import ForeignKey
-from forms import *
+# from sqlalchemy import ForeignKey
 from flask_migrate import Migrate
-import psycopg2
+from forms import *
+
 import timestring
-from models import db, Venue, Artist, Show
+from models import Venue, Artist, Show
 #----------------------------------------------------------------------------#
 # App Config.
 #----------------------------------------------------------------------------#
@@ -30,7 +30,9 @@ db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
 # TODO: connect to a local postgresql database
-app.config['SQLALCHEMY_DATABASE_URI' ] = 'postgresql://postgres:1234@localhost:5432/fyyurdb'
+app.config['SQLALCHEMY_DATABASE_URI' ] = 'postgresql://postgres:1234@localhost:5432/fyyurapp'
+
+
 #----------------------------------------------------------------------------#
 
 
